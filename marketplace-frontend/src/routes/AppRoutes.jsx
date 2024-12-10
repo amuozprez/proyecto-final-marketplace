@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Categorias from "../pages/Categorias";
@@ -15,10 +14,10 @@ import MisAnuncios from "../pages/MisAnuncios"; // Importa tu componente "Mis An
 import Cart from "../components/Cart";
 import ProtectedRoute from "../components/ProtectedRoute";
 
-const AppRoutes = ({ searchTerm }) => {
+const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home searchTerm={searchTerm} />} />
+      <Route path="/" element={<Home />} />
       <Route path="/categorias" element={<Categorias />} />
       <Route path="/producto/:id" element={<ProductoDetalle />} />
       <Route
