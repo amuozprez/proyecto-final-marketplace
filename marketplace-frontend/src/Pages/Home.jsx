@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { GlobalContext } from "../contexts/GlobalContext";
 import Card from "../components/Card";
 
-const Home = ({ searchTerm }) => {
+const Home = () => {
   const { products } = useContext(GlobalContext); // Productos desde el contexto global
   const [selectedCategory, setSelectedCategory] = useState("Todos"); // Categoría seleccionada
   const [currentPage, setCurrentPage] = useState(1); // Página actual para la paginación

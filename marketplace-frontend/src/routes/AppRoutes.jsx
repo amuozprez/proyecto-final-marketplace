@@ -10,7 +10,7 @@ import Register from "../pages/Register";
 import CrearPublicacion from "../pages/CrearPublicacion";
 import Favoritos from "../pages/MisFavoritos";
 import Ajustes from "../pages/Ajustes"; // Importamos Ajustes
-import MisAnuncios from "../pages/MisAnuncios"; // Importa tu componente "Mis Anuncios"
+import MisAnuncios from "../pages/MisAnuncios"; // Importa componente "Mis Anuncios"
 import Cart from "../components/Cart";
 import ProtectedRoute from "../components/ProtectedRoute";
 
