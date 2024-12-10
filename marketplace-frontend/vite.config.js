@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Mantén la base como raíz del dominio
+  base: '/marketplace-frontend/', // Asegúrate de que Render pueda resolver rutas relativas
   server: {
-    port: 3000, // Opcional, para desarrollo local
+    port: 3000, // Render expone este puerto automáticamente
   },
 });
