@@ -8,6 +8,10 @@ const upload = require("./upload"); // Importar la configuración de Multer
 const productRoutes = require("./routes/productRoutes");
 const { authenticateToken } = require("./middlewares");
 
+//dotenv al inicio para leer estas variables
+require("dotenv").config();
+const DATABASE_URL = process.env.DATABASE_URL;
+
 const app = express();
 
 // Configuración
@@ -15,8 +19,17 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/products", productRoutes);
 
-// Hacer pública la carpeta 'uploads'
+// Ruta para servir archivos subidos
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// Ruta para subir archivos
+app.post("/upload", upload.single("image"), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: "Debe proporcionar un archivo." });
+  }
+  const fileUrl = `${process.env.BASE_URL}/uploads/${req.file.filename}`;
+  res.status(200).json({ message: "Archivo subido exitosamente.", fileUrl });
+});
 
 // Clave secreta para JWT
 const SECRET_KEY = "tu_secreto_para_jwt";

@@ -10,7 +10,7 @@ const ProductoDetalle = () => {
     const fetchProductDetails = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/products/${id}`
+          `${import.meta.env.VITE_API_URL}/api/products/${id}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -38,7 +38,7 @@ const ProductoDetalle = () => {
           <img
             src={
               product.image_url
-                ? `http://localhost:3000${product.image_url}`
+                ? `${import.meta.env.VITE_API_URL}${product.image_url}`
                 : "/assets/images/default.jpg" // Imagen predeterminada si no hay una URL
             }
             alt={product.descripcion}

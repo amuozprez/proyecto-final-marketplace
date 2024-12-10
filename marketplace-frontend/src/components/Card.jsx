@@ -48,7 +48,7 @@ const Card = ({ product }) => {
   return (
     <div className="card product-card shadow-sm">
       <img
-        src={`http://localhost:3000${product.image_url}`}
+        src={`${import.meta.env.VITE_API_URL}${product.image_url}`}
         className="card-img-top"
         alt={product.descripcion}
         style={{ objectFit: "cover", height: "200px" }}
