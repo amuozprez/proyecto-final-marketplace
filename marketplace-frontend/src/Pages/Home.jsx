@@ -6,6 +6,7 @@ const Home = () => {
   const { products } = useContext(GlobalContext); // Productos desde el contexto global
   const [selectedCategory, setSelectedCategory] = useState("Todos"); // Categoría seleccionada
   const [currentPage, setCurrentPage] = useState(1); // Página actual para la paginación
+  const [searchTerm, setSearchTerm] = useState(""); // Término de búsqueda
   const itemsPerPage = 8; // Número de productos por página
 
   // Filtrar productos por categoría y término de búsqueda
@@ -38,6 +39,21 @@ const Home = () => {
           className="img-fluid banner"
         />
       </section>
+
+      {/* Barra de búsqueda */}
+      <div className="search-bar text-center my-4">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Buscar productos..."
+          value={searchTerm}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            setCurrentPage(1); // Reinicia a la primera página al cambiar búsqueda
+          }}
+          style={{ maxWidth: "400px", margin: "0 auto" }}
+        />
+      </div>
 
       {/* Dropdown de categorías */}
       <div className="category-dropdown text-center my-4">
