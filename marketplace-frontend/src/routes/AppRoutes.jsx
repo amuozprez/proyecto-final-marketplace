@@ -1,18 +1,18 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import Categorias from "../pages/Categorias";
-import ProductoDetalle from "../pages/ProductoDetalle";
-import Perfil from "../pages/Perfil";
-import Contacto from "../pages/Contacto";
-import Nosotros from "../pages/Nosotros";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import CrearPublicacion from "../pages/CrearPublicacion";
-import Favoritos from "../pages/MisFavoritos";
-import Ajustes from "../pages/Ajustes"; // Importamos Ajustes
-import MisAnuncios from "../pages/MisAnuncios"; // Importa componente "Mis Anuncios"
-import Cart from "../components/Cart";
-import ProtectedRoute from "../components/ProtectedRoute";
+import Home from "../pages/Home.jsx";
+import Categorias from "../pages/Categorias.jsx";
+import ProductoDetalle from "../pages/ProductoDetalle.jsx";
+import Perfil from "../pages/Perfil.jsx";
+import Contacto from "../pages/Contacto.jsx";
+import Nosotros from "../pages/Nosotros.jsx";
+import Login from "../pages/Login.jsx";
+import Register from "../pages/Register.jsx";
+import CrearPublicacion from "../pages/CrearPublicacion.jsx";
+import MisFavoritos from "../pages/MisFavoritos.jsx";
+import Ajustes from "../pages/Ajustes.jsx"; // Importamos Ajustes
+import MisAnuncios from "../pages/MisAnuncios.jsx"; // Importa componente "Mis Anuncios"
+import Cart from "../components/Cart.jsx";
+import ProtectedRoute from "../components/ProtectedRoute.jsx";
 
 const AppRoutes = () => {
   return (
@@ -52,7 +52,7 @@ const AppRoutes = () => {
         path="/favoritos"
         element={
           <ProtectedRoute>
-            <Favoritos />
+            <MisFavoritos />
           </ProtectedRoute>
         }
       />
